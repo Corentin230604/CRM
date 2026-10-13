@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%222%22 y=%223%22 width=%2212%22 height=%2210%22 rx=%221.5%22 fill=%22%232A4FC6%22/%3E%3Cpath d=%22M2 8h12M8 3v10%22 stroke=%22white%22 stroke-width=%221.2%22/%3E%3C/svg%3E">
+<title>Étage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+</head>
+<body>
+<div id="login" hidden>
+  <div class="lcard">
+    <div>
+      <div class="demo-flag" id="loginFlag">Plan vivant des bureaux</div>
+      <h1>Étage</h1>
+      <p>Le plan vivant de vos bureaux : qui est là, qui est en réunion, quelles salles sont libres.</p>
+    </div>
+    <button class="ms" id="msLogin" disabled title="Connexion avec votre compte Microsoft 365">
+      <svg viewBox="0 0 21 21" aria-hidden="true"><rect x="1" y="1" width="9" height="9" fill="#F25022"/><rect x="11" y="1" width="9" height="9" fill="#7FBA00"/><rect x="1" y="11" width="9" height="9" fill="#00A4EF"/><rect x="11" y="11" width="9" height="9" fill="#FFB900"/></svg>
+      Se connecter avec Microsoft <span style="font-size:12px" id="msNote">(version connectée)</span>
+    </button>
+    <div class="warn bad" id="loginErr" hidden></div>
+    <div style="display:grid;gap:8px" id="demoAccounts">
+      <div class="demo-flag">Ou explorez la démo (données fictives)</div>
+      <div id="accounts" style="display:grid;gap:8px"></div>
+    </div>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand"><b>Étage</b><span id="orgname"></span><button class="demo-pill" id="demoPill" hidden>Démo</button></div>
+    <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+    <div class="spacer"></div>
+    <div class="clock" title="Simulation de la journée : la présence Teams et les agendas Outlook suivent l'heure choisie">
+      <button class="iconbtn" id="play" aria-label="Lancer la simulation"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button>
+      <span class="t" id="clockT">10:35</span>
+      <input type="range" id="clockR" min="420" max="1200" step="5" aria-label="Heure simulée">
+      <small id="clockMode">Simulation</small>
+    </div>
+    <div class="me" id="me"></div>
+  </header>
+  <main class="main" id="main">
+    <div id="stage"></div>
+    <div id="labels"></div>
+    <div id="tip" hidden></div>
+    <div id="overlay"></div>
+    <div id="toast" role="status" hidden></div>
+    <div class="mapctl">
+      <button class="iconbtn" id="rotL" aria-label="Pivoter à gauche"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7a5 5 0 1 1 1.5 4.5"/><path d="M3 3v4h4"/></svg></button>
+      <button class="iconbtn" id="rotR" aria-label="Pivoter à droite"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 7a5 5 0 1 0-1.5 4.5"/><path d="M13 3v4H9"/></svg></button>
+      <button class="iconbtn" id="zoomO" aria-label="Dézoomer"><svg viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10"/></svg></button>
+      <button class="iconbtn" id="zoomI" aria-label="Zoomer"><svg viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M8 3v10"/></svg></button>
+      <button class="iconbtn" id="fit" aria-label="Vue d'ensemble"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
+    </div>
+  </main>
+</div>
+<script type="module" src="/src/app.js"></script>
+</body>
+</html>

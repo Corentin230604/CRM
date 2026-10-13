@@ -1,0 +1,17 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "ETAGE_CLIENT_ID": "00000000-0000-0000-0000-000000000000",
+    "ETAGE_CLIENT_SECRET": "à-remplir",
+    "ETAGE_TENANT_ID": "organizations",
+    "ETAGE_SECRET": "remplacez-par-au-moins-32-caractères-aléatoires",
+    "ETAGE_STORAGE_CONNECTION": "UseDevelopmentStorage=true",
+    "ETAGE_ADMINS": "",
+    "ETAGE_ORG_NAME": "Mon entreprise",
+    "ETAGE_PUBLIC_URL": "http://localhost:5173",
+    "ETAGE_TIMEZONE": "Romance Standard Time",
+    "ETAGE_IANA_TIMEZONE": "Europe/Paris"
+  }
+}

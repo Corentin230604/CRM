@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.shots/
+api/local.settings.json
+web/.env.local
+*.log
