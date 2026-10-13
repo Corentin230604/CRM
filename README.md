@@ -2,6 +2,9 @@
 
 Plan vivant des bureaux en 3D : qui est là, qui est en réunion, quelles salles sont libres.
 
+**Démo en ligne** : https://corentin230604.github.io/CRM/ (publiée par GitHub Pages à chaque modification de `main`, données fictives).
+Le déploiement Azure (version connectée) est **en pause** : voir `.github/workflows/azure-deploy.yml` pour le réactiver.
+
 - **Sans connexion**, le site s'ouvre sur une **démonstration** (données fictives).
 - **« Se connecter avec Microsoft »** ouvre la vraie version de l'entreprise : plan, postes, réservation des salles, présence déclarée (« aujourd'hui je suis au bureau / en télétravail / absent »).
 - **« Connecter Teams et Outlook »** est facultatif et propre à chacun : la personne autorise Étage à lire **son** statut Teams, **son** lieu de travail et **son** agenda. Elle apparaît alors en direct.
@@ -63,7 +66,7 @@ az staticwebapp create --name etage --resource-group rg-etage --location westeur
   --app-location web --api-location api --output-location dist --login-with-github
 ```
 
-La dernière commande ajoute le secret `AZURE_STATIC_WEB_APPS_API_TOKEN` au dépôt. Si elle crée son propre fichier de workflow, supprimez-le : `.github/workflows/azure-static-web-apps.yml` est déjà prêt (il lance aussi les tests).
+La dernière commande ajoute le secret `AZURE_STATIC_WEB_APPS_API_TOKEN` au dépôt. Si elle crée son propre fichier de workflow, supprimez-le : `.github/workflows/azure-deploy.yml` est déjà prêt. Il est en pause : remettez-y le déclencheur `push` (indiqué en commentaire) pour déployer à chaque modification.
 
 ### 2. Déclarer l'application chez Microsoft
 

@@ -1,11 +1,14 @@
-name: Tester et déployer Étage
+name: Déployer sur Azure (en pause)
 
+# EN PAUSE : ce déploiement ne se lance plus automatiquement.
+# Pour le réactiver, remettez le bloc « push / pull_request » ci-dessous à la place de « workflow_dispatch ».
+#   push:
+#     branches: [main]
+#   pull_request:
+#     types: [opened, synchronize, reopened, closed]
+#     branches: [main]
 on:
-  push:
-    branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   test:
